@@ -126,65 +126,151 @@ const orbitSample = {
     {
       context: `Orbit Sample Context Description`,
       dashboard: {
-        filters: [
+      filters: [
           { title: "Date", column: "date" },
           { title: "Month", column: "month" },
           { title: "Region Sales", column: "region_sales" },
           { title: "Package Service", column: "package_service" },
-          { title: "Channel Name", column: "channel_name" },
-          { title: "Revenue", column: "rev" },
-          { title: "Transactions", column: "trx" },
-          { title: "Subs", column: "subs" },
-          { title: "Revenue CVM", column: "rev_cvm" },
-          { title: "Transactions CVM", column: "trx_cvm" },
-          { title: "Subs CVM", column: "subs_cvm" },
         ],
         kpis: [
-          {
-            title: "Total Subs",
-            javascriptFunction:
-              "data => { let totalSubs = 0; data.forEach(row => { if(row['subs']) { const subs = parseNumber(row['subs']); if(!isNaN(subs)) { totalSubs += subs; } } }); return totalSubs; }",
+           {
+            title: "Total Revenue",
+            javascriptFunction: `data => {
+              return data.reduce((total, row) => total + parseNumber(row["rev"]), 0);
+            }`,
           },
           {
-            title: "Average Subs",
-            javascriptFunction:
-              "data => { let totalSubs = 0; let count = 0; data.forEach(row => { if(row['subs']) { const subs = parseNumber(row['subs']); if(!isNaN(subs)) { totalSubs += subs; count++; } } }); return totalSubs / count; }",
+            title: "Total Transactions",
+            javascriptFunction: `data => {
+              return data.reduce((total, row) => total + parseNumber(row["trx"]), 0);
+            }`,
           },
           {
-            title: "Max Subs",
-            javascriptFunction:
-              "data => { let maxSubs = 0; data.forEach(row => { if(row['subs']) { const subs = parseNumber(row['subs']); if(!isNaN(subs) && subs > maxSubs) { maxSubs = subs; } } }); return maxSubs; }",
+            title: "Total Subscriptions",
+            javascriptFunction: `data => {
+              return data.reduce((total, row) => total + parseNumber(row["subs"]), 0);
+            }`,
           },
           {
-            title: "Min Subs",
-            javascriptFunction:
-              "data => { let minSubs = Infinity; data.forEach(row => { if(row['subs']) { const subs = parseNumber(row['subs']); if(!isNaN(subs) && subs < minSubs) { minSubs = subs; } } }); return minSubs === Infinity ? 0 : minSubs; }",
+            title: "Total Revenue CVM",
+            javascriptFunction: `data => {
+              return data.reduce((total, row) => total + parseNumber(row["rev_cvm"]), 0);
+            }`,
           },
         ],
         charts: [
-          {
-            title: "Subs by Region Sales",
+           {
+            title: "Revenue by Region Sales",
             chartType: "barChart",
-            javascriptFunction:
-              "data => { const regionSales = data.reduce((acc, row) => { if(row['region_sales'] && row['subs']) { const regionSales = row['region_sales']; const subs = parseNumber(row['subs']); if(!isNaN(subs)) { if(acc[regionSales]) { acc[regionSales] += subs; } else { acc[regionSales] = subs; } } } return acc; }, {}); const result = Object.keys(regionSales).map(regionSales => { return { x: regionSales, y: regionSales[regionSales] }; }); return result; }",
+            javascriptFunction: `data => {
+              const groupedData = data.reduce((result, row) => {
+                const regionSales = row["region_sales"];
+                const revenue = parseNumber(row["rev"]);
+                if (regionSales && !isNaN(revenue)) {
+                  if (!result[regionSales]) {
+                    result[regionSales] = 0;
+                  }
+                  result[regionSales] += revenue;
+                }
+                return result;
+              }, {});
+              const sortedData = Object.entries(groupedData).sort((a, b) => b[1] - a[1]);
+              return sortedData.slice(0, 10).map(([regionSales, revenue]) => ({ x: regionSales, y: revenue }));
+            }`,
           },
           {
-            title: "Subs by Package Service",
+            title: "Transactions by Channel Name",
             chartType: "barChart",
-            javascriptFunction:
-              "data => { const packageService = data.reduce((acc, row) => { if(row['package_service'] && row['subs']) { const packageService = row['package_service']; const subs = parseNumber(row['subs']); if(!isNaN(subs)) { if(acc[packageService]) { acc[packageService] += subs; } else { acc[packageService] = subs; } } } return acc; }, {}); const result = Object.keys(packageService).map(packageService => { return { x: packageService, y: packageService[packageService] }; }); return result; }",
+            javascriptFunction: `data => {
+              const groupedData = data.reduce((result, row) => {
+                const channelName = row["channel_name"];
+                const transactions = parseNumber(row["trx"]);
+                if (channelName && !isNaN(transactions)) {
+                  if (!result[channelName]) {
+                    result[channelName] = 0;
+                  }
+                  result[channelName] += transactions;
+                }
+                return result;
+              }, {});
+              const sortedData = Object.entries(groupedData).sort((a, b) => b[1] - a[1]);
+              return sortedData.slice(0, 10).map(([channelName, transactions]) => ({ x: channelName, y: transactions }));
+            }`,
           },
           {
-            title: "Subs by Channel Name",
+            title: "Subscriptions by Package Service",
             chartType: "barChart",
-            javascriptFunction:
-              "data => { const channelName = data.reduce((acc, row) => { if(row['channel_name'] && row['subs']) { const channelName = row['channel_name']; const subs = parseNumber(row['subs']); if(!isNaN(subs)) { if(acc[channelName]) { acc[channelName] += subs; } else { acc[channelName] = subs; } } } return acc; }, {}); const result = Object.keys(channelName).map(channelName => { return { x: channelName, y: channelName[channelName] }; }); return result; }",
+            javascriptFunction: `data => {
+              const groupedData = data.reduce((result, row) => {
+                const packageService = row["package_service"];
+                const subscriptions = parseNumber(row["subs"]);
+                if (packageService && !isNaN(subscriptions)) {
+                  if (!result[packageService]) {
+                    result[packageService] = 0;
+                  }
+                  result[packageService] += subscriptions;
+                }
+                return result;
+              }, {});
+              const sortedData = Object.entries(groupedData).sort((a, b) => b[1] - a[1]);
+              return sortedData.slice(0, 10).map(([packageService, subscriptions]) => ({ x: packageService, y: subscriptions }));
+            }`,
           },
           {
-            title: "Subs by Month",
+            title: "Revenue by Month",
             chartType: "lineChart",
-            javascriptFunction:
-              "data => { const months = data.reduce((acc, row) => { if(row['month'] && row['subs']) { const month = row['month']; const subs = parseNumber(row['subs']); if(!isNaN(subs)) { if(acc[month]) { acc[month] += subs; } else { acc[month] = subs; } } } return acc; }, {}); const result = Object.keys(months).map(month => { return { x: month, y: months[month] }; }); return result; }",
+            javascriptFunction: `data => {
+              const groupedData = data.reduce((result, row) => {
+                const month = row["month"];
+                const revenue = parseNumber(row["rev"]);
+                if (month && !isNaN(revenue)) {
+                  if (!result[month]) {
+                    result[month] = 0;
+                  }
+                  result[month] += revenue;
+                }
+                return result;
+              }, {});
+              return Object.entries(groupedData).map(([month, revenue]) => ({ x: month, y: revenue }));
+            }`,
+          },
+          {
+            title: "Revenue by Region Sales (Pie Chart)",
+            chartType: "pieChart",
+            javascriptFunction: `data => {
+              const groupedData = data.reduce((result, row) => {
+                const regionSales = row["region_sales"];
+                const revenue = parseNumber(row["rev"]);
+                if (regionSales && !isNaN(revenue)) {
+                  if (!result[regionSales]) {
+                    result[regionSales] = 0;
+                  }
+                  result[regionSales] += revenue;
+                }
+                return result;
+              }, {});
+              const sortedData = Object.entries(groupedData).sort((a, b) => b[1] - a[1]);
+              return sortedData.slice(0, 5).map(([regionSales, revenue]) => ({ x: regionSales, y: revenue }));
+            }`,
+          },
+          {
+            title: "Revenue by Package Service (Treemap Chart)",
+            chartType: "treemapChart",
+            javascriptFunction: `data => {
+              const groupedData = data.reduce((result, row) => {
+                const packageService = row["package_service"];
+                const revenue = parseNumber(row["rev"]);
+                if (packageService && !isNaN(revenue)) {
+                  if (!result[packageService]) {
+                    result[packageService] = 0;
+                  }
+                  result[packageService] += revenue;
+                }
+                return result;
+              }, {});
+              const sortedData = Object.entries(groupedData).sort((a, b) => b[1] - a[1]);
+              return sortedData.slice(0, 10).map(([packageService, revenue]) => ({ x: packageService, y: revenue }));
+            }`,
           },
         ],
       },
