@@ -46,11 +46,11 @@ export default function Home() {
 
   const [data, setData] = React.useState<IDataset>();
   const [userContext, setUserContext] = React.useState<string>("");
-const [showTextarea, setShowTextarea] = React.useState(false);
+  const [showTextarea, setShowTextarea] = React.useState(false);
   const [currentSampleIndex, setCurrentSampleIndex] = React.useState(-1);
   const [dashboard, setDashboard] = React.useState<IDashboard | null>();
   const [showSettings, setShowSettings] = React.useState(false);
-    const [selectedDatasetIndex, setSelectedDatasetIndex] = React.useState(0); // State untuk menyimpan indeks dataset yang dipilih
+  const [selectedDatasetIndex, setSelectedDatasetIndex] = React.useState(0); 
 
   React.useEffect(() => {
     const config = localStorage.getItem("analyzer-settings");

@@ -25,12 +25,17 @@ export function PieChart(
   }, [props.config]);
 
   const data = React.useMemo(() => {
-    if (typeof myGroupingFunction === "function")
-      return myGroupingFunction(props.data);
-    return null;
+    if (typeof myGroupingFunction === "function") {
+      const parsedData = myGroupingFunction(props.data);
+      return Array.isArray(parsedData) ? parsedData : [];
+    }
+    return [];
   }, [myGroupingFunction, props.config, props.data]);
 
-  if (!data) return null;
+  if (!data || !Array.isArray(data) || data.length === 0) {
+    return null; // Menghindari render jika data tidak valid atau tidak tersedia
+  }
+
   return (
     <ErrorBoundary>
       <ResponsiveContainer width="100%" height="100%">
