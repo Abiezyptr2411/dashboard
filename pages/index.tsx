@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { stringify } from "querystring";
 import React from "react";
+import ChatBot from 'react-simple-chatbot';
 import {
   Button,
   ButtonsRow,
@@ -34,8 +35,28 @@ import { isDataValid, parseData, stringifyData } from "../utils/parseData";
 import gtag from "../lib/gtag";
 import { getSpecificDataset } from '../openai/sample';
 
+const floatingButtonStyle = {
+  position: 'fixed',
+  bottom: '40px',
+  left: '20px',
+  zIndex: 9999,
+  backgroundColor: 'blue', // Ganti dengan warna latar belakang yang diinginkan
+  color: 'white', // Ganti dengan warna teks yang diinginkan
+  padding: '10px',
+  borderRadius: '50%',
+  cursor: 'pointer',
+};
+
 export default function Home() {
   const [view, setView] = React.useState("dashboard");
+
+   const steps = [
+      {
+        id: 'greeting',
+        message: 'Hello! How are you today?',
+        end: true,
+      }
+    ];
 
   const [settings, setSettings] = React.useState<ISettings>({
     apikey: "",
@@ -51,6 +72,7 @@ export default function Home() {
   const [dashboard, setDashboard] = React.useState<IDashboard | null>();
   const [showSettings, setShowSettings] = React.useState(false);
   const [selectedDatasetIndex, setSelectedDatasetIndex] = React.useState(0); 
+   const [showChatbot, setShowChatbot] = React.useState(false);
 
   React.useEffect(() => {
     const config = localStorage.getItem("analyzer-settings");
@@ -97,6 +119,7 @@ export default function Home() {
     setData(undefined);
     setDashboard(null);
     setUserContext("");
+    setSelectedDatasetIndex(-1);
   }, []);
 
   const handleSettingsChange = React.useCallback((settings: ISettings) => {
@@ -162,6 +185,16 @@ export default function Home() {
   const handleDeleteButtonClick = () => {
     setShowTextarea(false);
     // Handle delete button click
+  };
+
+  const handleToggleChatbot = () => {
+    setShowChatbot(!showChatbot);
+  };
+
+  const handleOutsideClick = () => {
+    if (showChatbot) {
+      setShowChatbot(false);
+    }
   };
 
   return (
@@ -257,9 +290,13 @@ export default function Home() {
               >
                 <Icon icon="thrash" /> Clear
               </Button>
-              <Button className="analyze">
+              <Button 
+               outline
+               className="analyze"
+               onClick={handleToggleChatbot}>
                 <Icon icon="chat-dots" /> Chatbot
               </Button>
+             
               <Button
                 className="analyze"
                 disabled={!data && !!settings?.apikey}
@@ -274,6 +311,19 @@ export default function Home() {
                 })()}
               </Button>
             </ButtonsRow>
+
+             <div
+              onClick={handleOutsideClick}
+              style={{
+                position: 'absolute',
+                bottom: '20px',
+                left: '20px',
+              }}
+              >
+              {showChatbot && (
+                <ChatBot steps={steps} />
+              )}
+            </div>
 
             {userContext ? (
               <TextInput
@@ -308,24 +358,22 @@ export default function Home() {
                 padding: '10px',
               }}
             >
-                {showTextarea && (
-                <TextInput
-                  type="textarea"
-                  value=" 1. Revenue Performance: Since its launch on September 4, the daily revenue from Super Seru is around ~2.6 billion IDR, with significant contributions from various areas and channels​​.\n
+               {showTextarea && (
+  <TextInput
+    type="textarea"
+    value={`1. Revenue Performance: Since its launch on September 4, the daily revenue from Super Seru is around ~2.6 billion IDR, with significant contributions from various areas and channels​​.\n
+2. Super Seru 100K's Performance: The Super Seru 100K package has become the most popular, contributing 73.4% to the total with a significant revenue growth of +237.2%​​.\n
+3. Brand Perception and Customer Feedback: The Super Seru program has helped shift Telkomsel’s brand perception from premium to value for money. It is suitable for customers needing big data quotas, though there are concerns about the validity of the Super Seru packages. The packages are generally viewed as attractive and competitive compared to similar offerings by competitors like Indosat​​.\n
+4. Overall Contribution: Super Seru contributes to an increase in Total Payload, accounting for 2% of the total payload​​.`}
+    label={
+      <>
+        Key Summarize Point
+        <ButtonIcon icon="caret-down" onClick={handleDeleteButtonClick} />
+      </>
+    }
+  />
+)}
 
-                          2. Super Seru 100K's Performance: The Super Seru 100K package has become the most popular, contributing 73.4% to the total with a significant revenue growth of +237.2%​​.\n
-
-                          3. Brand Perception and Customer Feedback: The Super Seru program has helped shift Telkomsel’s brand perception from premium to value for money. It is suitable for customers needing big data quotas, though there are concerns about the validity of the Super Seru packages. The packages are generally viewed as attractive and competitive compared to similar offerings by competitors like Indosat​​.\n
-
-                          4. Overall Contribution: Super Seru contributes to an increase in Total Payload, accounting for 2% of the total payload​​."
-                  label={
-                    <>
-                      Key Summarize Point
-                      <ButtonIcon icon="caret-down" onClick={handleDeleteButtonClick} />
-                    </>
-                  }
-                />
-              )}
               <ButtonLink onClick={handleButtonClick}>
                 {showTextarea ? '' : '+ Key Summarize Point'}
               </ButtonLink>

@@ -17,25 +17,25 @@ export function TreemapChart(
     return parseFunc(props.config.javascriptFunction, (data: IDataset) => data);
   }, [props.config]);
 
-  const data = React.useMemo(() => {
-    if (typeof myGroupingFunction === "function")
-      return myGroupingFunction(props.data);
-    return null;
+  const processedData = React.useMemo(() => {
+    if (typeof myGroupingFunction === "function") {
+      const result = myGroupingFunction(props.data);
+      return Array.isArray(result) ? result : []; // Pastikan yang dikembalikan adalah array
+    }
+    return [];
   }, [myGroupingFunction, props.config, props.data]);
 
-  if (!data) return null;
   return (
     <ErrorBoundary>
       <ResponsiveContainer width="100%" height="100%">
         <RTreemap
           width={400}
           height={200}
-          data={data.map((d) => ({ name: d.x, value: d.y }))}
+          data={processedData.map((d) => ({ name: d.x, value: d.y }))}
           stroke="var(--textColor)"
           fill={palette[0]}
         >
           <Tooltip
-            //@ts-ignore
             formatter={(d, name, item) => {
               return [
                 formatNumber(item.payload.value as number),
@@ -48,3 +48,4 @@ export function TreemapChart(
     </ErrorBoundary>
   );
 }
+

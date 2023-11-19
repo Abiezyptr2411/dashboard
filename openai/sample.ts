@@ -75,53 +75,186 @@ const cbSample = {
 const orbitSample = {
  data: `date,month,region_sales,package_service,channel_name,rev,trx,subs,rev_cvm,trx_cvm,subs_cvm\r\n
 10/31/2023,Oct-23,BALINUSRA,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,393000,3,3,0,0,0\r\n
-11/30/2023,Nov-23,BALINUSRA,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,399000,4,4,0,0,0\r\n
-12/31/2023,Dec-23,BALINUSRA,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,405000,5,5,0,0,0\r\n
-1/31/2024,Jan-24,BALINUSRA,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,410000,6,6,0,0,0\r\n
-2/29/2024,Feb-24,CENTRAL JABOTABEK,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,415000,7,7,0,0,0\r\n
-3/31/2024,Mar-24,CENTRAL JABOTABEK,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,420000,8,8,0,0,0\r\n
-4/30/2024,Apr-24,CENTRAL JABOTABEK,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,425000,9,9,0,0,0\r\n
-5/31/2024,May-24,CENTRAL JABOTABEK,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,430000,10,10,0,0,0\r\n
-6/30/2024,Jun-24,CENTRAL JABOTABEK,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,435000,11,11,0,0,0\r\n
-7/31/2024,Jul-24,CENTRAL JABOTABEK,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,440000,12,12,0,0,0\r\n
-8/31/2024,Aug-24,JABAR,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,445000,13,13,0,0,0\r\n
-9/30/2024,Sep-24,JABAR,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,450000,14,14,0,0,0\r\n
-10/31/2024,Oct-24,JABAR,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,455000,15,15,0,0,0\r\n
-11/30/2024,Nov-24,JABAR,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,460000,16,16,0,0,0\r\n
-12/31/2024,Dec-24,JATENG,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,465000,17,17,0,0,0\r\n
-1/31/2025,Jan-25,JATENG,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,470000,18,18,0,0,0\r\n
-2/28/2025,Feb-25,JATENG,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,475000,19,19,0,0,0\r\n
-3/31/2025,Mar-25,JATENG,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,480000,20,20,0,0,0\r\n
-4/30/2025,Apr-25,JATIM,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,485000,21,21,0,0,0\r\n
-5/31/2025,May-25,JATIM,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,490000,22,22,0,0,0\r\n
-6/30/2025,Jun-25,JATIM,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,495000,23,23,0,0,0\r\n
-7/31/2025,Jul-25,JATIM,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,500000,24,24,0,0,0\r\n
-8/31/2025,Aug-25,JATIM,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,505000,25,25,0,0,0\r\n
-9/30/2025,Sep-25,JATIM,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,510000,26,26,0,0,0\r\n
-10/31/2025,Oct-25,KALIMANTAN,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,515000,27,27,0,0,0\r\n
-11/30/2025,Nov-25,KALIMANTAN,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,520000,28,28,0,0,0\r\n
-12/31/2025,Dec-25,KALIMANTAN,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,525000,29,29,0,0,0\r\n
-1/31/2026,Jan-26,KALIMANTAN,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,530000,30,30,0,0,0\r\n
-2/28/2026,Feb-26,KALIMANTAN,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,535000,31,31,0,0,0\r\n
-3/31/2026,Mar-26,KALIMANTAN,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,540000,32,32,0,0,0\r\n
-4/30/2026,Apr-26,PUMA,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,545000,33,33,0,0,0\r\n
-5/31/2026,May-26,PUMA,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,550000,34,34,0,0,0\r\n
-6/30/2026,Jun-26,PUMA,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,555000,35,35,0,0,0\r\n
-7/31/2026,Jul-26,SUMBAGSEL,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,560000,36,36,0,0,0\r\n
-8/31/2026,Aug-26,SUMBAGSEL,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,565000,37,37,0,0,0\r\n
-9/30/2026,Sep-26,SUMBAGSEL,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,570000,38,38,0,0,0\r\n
-10/31/2026,Oct-26,SUMBAGSEL,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,575000,39,39,0,0,0\r\n
-11/30/2026,Nov-26,SUMBAGSEL,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,580000,40,40,0,0,0\r\n
-12/31/2026,Dec-26,SUMBAGSEL,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,585000,41,41,0,0,0\r\n
-1/31/2027,Jan-27,SUMBAGSEL,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,590000,42,42,0,0,0\r\n
-2/28/2027,Feb-27,SUMBAGSEL,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,595000,43,43,0,0,0\r\n
-3/31/2027,Mar-27,SUMBAGSEL,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,600000,44,44,0,0,0\r\n
-4/30/2027,Apr-27,BALINUSRA,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,605000,45,45,0,0,0\r\n
-5/31/2027,May-27,BALINUSRA,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,610000,46,46,0,0,0\r\n
-6/30/2027,Jun-27,BALINUSRA,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,615000,47,47,0,0,0\r\n
-7/31/2027,Jul-27,BALINUSRA,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,620000,48,48,0,0,0\r\n
-8/31/2027,Aug-27,BALINUSRA,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,625000,49,49,0,0,0\r\n
-9/30/2027,Sep-27,BALINUSRA,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,630000,50,50,0,0,0\r\n`,
+10/31/2023,Oct-23,BALINUSRA,Home Acquisition - Orbit 5G New Sales,Web Self Srvc - Home LTE,131000,1,1,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Acquisition - Orbit Bonus,Mobile Apps - Home LTE,30300000,825,737,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Acquisition - Orbit Bonus,Web Self Srvc - Home LTE,8120000,817,658,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Acquisition - Orbit New Sales,Ext Modern - FINNET,131000,1,1,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Acquisition - Orbit New Sales,Ext Modern - KISEL,66000,1,1,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Acquisition - Orbit New Sales,GraPARI - DSC,15421000,136,117,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Acquisition - Orbit New Sales,Mobile Apps - DigiPos,58401500,595,439,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Acquisition - Orbit New Sales,Mobile Apps - Home LTE,27740000,305,229,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Acquisition - Orbit New Sales,Mobile Apps - MyTelkomsel App,12185000,128,94,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Acquisition - Orbit New Sales,UMB - USSD (ADN: 363),126000,6,3,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Acquisition - Orbit New Sales,Virtual Assistant - Line,5821000,51,46,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Acquisition - Orbit New Sales,Web Portal - my.telkomsel.com,309000,4,3,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Acquisition - Orbit New Sales,Web Self Srvc - Home LTE,331726000,3458,2244,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Acquisition - Orbit Postpaid New Sales,GraPARI - DSC,66000,1,1,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Bundling - Orbit Bundling,Mobile Apps - Home LTE,20000,2,2,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home CVM - Orbit CVM Lapser Prevention,Mobile Apps - DigiPos,8336500,69,57,8336500,69,57\r\n
+10/31/2023,Oct-23,BALINUSRA,Home CVM - Orbit CVM Lapser Prevention,Mobile Apps - Home LTE,2935000,21,20,2935000,21,20\r\n
+10/31/2023,Oct-23,BALINUSRA,Home CVM - Orbit CVM Lapser Prevention,Mobile Apps - MyTelkomsel App,9490000,80,70,9490000,80,70\r\n
+10/31/2023,Oct-23,BALINUSRA,Home CVM - Orbit CVM Lapser Prevention,Web Self Srvc - Home LTE,23710000,189,150,23710000,189,150\r\n
+10/31/2023,Oct-23,BALINUSRA,Home CVM - Orbit CVM Low Denom,Mobile Apps - Home LTE,245000,23,18,245000,23,18\r\n
+10/31/2023,Oct-23,BALINUSRA,Home CVM - Orbit CVM Low Denom,Web Self Srvc - Home LTE,275000,28,22,275000,28,22\r\n
+10/31/2023,Oct-23,BALINUSRA,Home CVM - Orbit CVM Stimulation,Mobile Apps - DigiPos,1915000,15,15,1915000,15,15\r\n
+10/31/2023,Oct-23,BALINUSRA,Home CVM - Orbit CVM Stimulation,Mobile Apps - Home LTE,15830000,101,91,15830000,101,91\r\n
+10/31/2023,Oct-23,BALINUSRA,Home CVM - Orbit CVM Stimulation,Mobile Apps - MyTelkomsel App,700000,4,4,700000,4,4\r\n
+10/31/2023,Oct-23,BALINUSRA,Home CVM - Orbit CVM Stimulation,Web Self Srvc - Home LTE,252885000,1741,1500,252885000,1741,1500\r\n
+10/31/2023,Oct-23,BALINUSRA,Home CVM - Orbit CVM Uplift,Ext Modern - FINNET,105000,1,1,105000,1,1\r\n
+10/31/2023,Oct-23,BALINUSRA,Home CVM - Orbit CVM Uplift,GraPARI - DSC,760000,8,8,760000,8,8\r\n
+10/31/2023,Oct-23,BALINUSRA,Home CVM - Orbit CVM Uplift,Mobile Apps - DigiPos,51784500,365,321,51784500,365,321\r\n
+10/31/2023,Oct-23,BALINUSRA,Home CVM - Orbit CVM Uplift,Mobile Apps - Home LTE,38725000,271,251,38725000,271,251\r\n
+10/31/2023,Oct-23,BALINUSRA,Home CVM - Orbit CVM Uplift,Mobile Apps - MyTelkomsel App,14655000,112,98,14655000,112,98\r\n
+10/31/2023,Oct-23,BALINUSRA,Home CVM - Orbit CVM Uplift,Virtual Assistant - Line,95000,1,1,95000,1,1\r\n
+10/31/2023,Oct-23,BALINUSRA,Home CVM - Orbit CVM Uplift,Web Portal - my.telkomsel.com,260000,2,2,260000,2,2\r\n
+10/31/2023,Oct-23,BALINUSRA,Home CVM - Orbit CVM Uplift,Web Self Srvc - Home LTE,13330000,89,84,13330000,89,84\r\n
+10/31/2023,Oct-23,BALINUSRA,Home CVM - Orbit CVM Winback,GraPARI - DSC,50000,2,2,50000,2,2\r\n
+10/31/2023,Oct-23,BALINUSRA,Home CVM - Orbit CVM Winback,Mobile Apps - DigiPos,688000,10,10,688000,10,10\r\n
+10/31/2023,Oct-23,BALINUSRA,Home CVM - Orbit CVM Winback,Mobile Apps - Home LTE,22175000,331,270,22175000,331,270\r\n
+10/31/2023,Oct-23,BALINUSRA,Home CVM - Orbit CVM Winback,Mobile Apps - MyTelkomsel App,8880000,165,95,8880000,165,95\r\n
+10/31/2023,Oct-23,BALINUSRA,Home CVM - Orbit CVM Winback,Web Portal - my.telkomsel.com,65000,2,1,65000,2,1\r\n
+10/31/2023,Oct-23,BALINUSRA,Home CVM - Orbit CVM Winback,Web Self Srvc - Home LTE,85815000,1488,900,85815000,1488,900\r\n
+10/31/2023,Oct-23,BALINUSRA,Home CVM - Orbit Low Denom,Mobile Apps - Home LTE,324000,16,7,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home CVM - Orbit Low Denom,Mobile Apps - MyTelkomsel App,15000,1,1,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home CVM - Orbit Low Denom,Web Self Srvc - Home LTE,2484000,240,124,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home CVM - Orbit Special Offer Home Mobility,Mobile Apps - Home LTE,891000,11,11,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home CVM - Orbit Special Offer Home Mobility,Web Self Srvc - Home LTE,12069000,149,124,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home CVM - Orbit Winback,Web Self Srvc - Home LTE,4798000,48,37,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Core - Home Orbit 5G,Web Self Srvc - Home LTE,2413000,7,5,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Core - Orbit 5G Regular,GraPARI - DSC,505000,1,1,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Core - Orbit 5G Regular,Mobile Apps - Home LTE,393000,3,2,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Core - Orbit 5G Regular,Mobile Apps - MyTelkomsel App,262000,2,2,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Core - Orbit Postpaid Regular,GraPARI - DSC,716000,4,4,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Core - Orbit Postpaid Regular,Mobile Apps - Home LTE,1493000,13,3,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Core - Orbit Postpaid Regular,Web Self Srvc - Home LTE,62000,2,1,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Core - Orbit Regular,Ext Modern - FINARYA LinkAja,81000,1,1,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Core - Orbit Regular,Ext Modern - FINNET,1226000,10,6,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Core - Orbit Regular,Ext Modern - KISEL,1376000,11,11,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Core - Orbit Regular,GraPARI - DSC,47845000,322,252,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Core - Orbit Regular,Mobile Apps - DigiPos,387554000,3032,1970,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Core - Orbit Regular,Mobile Apps - Home LTE,377830000,2895,2040,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Core - Orbit Regular,Mobile Apps - MyTelkomsel App,158585000,1279,720,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Core - Orbit Regular,UMB - USSD (ADN: 363),9648000,82,50,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Core - Orbit Regular,Virtual Assistant - Line,10305000,73,69,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Core - Orbit Regular,Web Portal - my.telkomsel.com,1000000,10,9,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Core - Orbit Regular,Web Self Srvc - Home LTE,1940087000,15180,9194,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home OTT,,154000,2,2,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home OTT,Mobile Apps - Home LTE,254000,6,6,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home OTT,Web Self Srvc - Home LTE,3605000,78,68,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Seasonal - Orbit Internet Malam,Mobile Apps - Home LTE,950000,62,54,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Seasonal - Orbit Internet Malam,Web Self Srvc - Home LTE,5261000,333,267,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Seasonal - Orbit Surprise Deals,GraPARI - DSC,871000,6,6,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Seasonal - Orbit Surprise Deals,Mobile Apps - DigiPos,1285000,8,8,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Seasonal - Orbit Surprise Deals,Mobile Apps - Home LTE,1154000,8,8,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Seasonal - Orbit Surprise Deals,Mobile Apps - MyTelkomsel App,424000,4,4,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Seasonal - Orbit Surprise Deals,Virtual Assistant - Line,212000,2,2,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Seasonal - Orbit Surprise Deals,Web Portal - my.telkomsel.com,252000,1,1,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Home Seasonal - Orbit Surprise Deals,Web Self Srvc - Home LTE,31312000,206,206,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Mifi Bundling - Orbit Mifi Bundling Package,Mobile Apps - Home LTE,3750000,75,75,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Mifi Bundling - Orbit Mifi Bundling Package,Web Self Srvc - Home LTE,1550000,31,31,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Mifi Core - Orbit Mifi,Ext Modern - KISEL,100000,1,1,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Mifi Core - Orbit Mifi,GraPARI - DSC,2650000,16,16,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Mifi Core - Orbit Mifi,Mobile Apps - DigiPos,6249000,53,39,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Mifi Core - Orbit Mifi,Mobile Apps - Home LTE,8925000,89,55,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Mifi Core - Orbit Mifi,Mobile Apps - MyTelkomsel App,8930000,82,61,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Mifi Core - Orbit Mifi,Virtual Assistant - Line,1400000,5,4,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Mifi Core - Orbit Mifi,Web Portal - my.telkomsel.com,100000,2,2,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Mifi Core - Orbit Mifi,Web Self Srvc - Home LTE,65605000,576,342,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Orbit - Kuota Keluarga,Mobile Apps - Home LTE,120000,1,1,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Orbit - Kuota Keluarga,Mobile Apps - MyTelkomsel App,140000,1,1,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Orbit Indihome,Mobile Apps - Home LTE,0,2,2,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Orbit Indihome First,Web Portal - FMC Web,560000,2,2,0,0,0\r\n
+10/31/2023,Oct-23,BALINUSRA,Orbit Indihome First,Web Self Srvc - Home LTE,305000,2,2,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Acquisition - Orbit 5G New Sales,Mobile Apps - Home LTE,1029000,5,5,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Acquisition - Orbit 5G New Sales,Web Self Srvc - Home LTE,3368000,20,16,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Acquisition - Orbit Bonus,Mobile Apps - Home LTE,49606000,1151,1092,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Acquisition - Orbit Bonus,Web Self Srvc - Home LTE,6344000,866,742,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Acquisition - Orbit New Sales,Ext Modern - FINNET,590000,5,4,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Acquisition - Orbit New Sales,Ext Modern - KISEL,1414000,14,12,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Acquisition - Orbit New Sales,Ext Modern - NARINDO,524000,4,2,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Acquisition - Orbit New Sales,Ext Modern - PMB,212000,2,2,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Acquisition - Orbit New Sales,GraPARI - DSC,2811000,31,30,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Acquisition - Orbit New Sales,Mobile Apps - DigiPos,6281000,68,58,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Acquisition - Orbit New Sales,Mobile Apps - Home LTE,49866000,531,425,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Acquisition - Orbit New Sales,Mobile Apps - MyTelkomsel App,28393000,287,216,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Acquisition - Orbit New Sales,UMB - USSD (ADN: 363),756000,7,6,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Acquisition - Orbit New Sales,Virtual Assistant - Line,81000,1,1,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Acquisition - Orbit New Sales,Web Portal - my.telkomsel.com,329000,4,3,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Acquisition - Orbit New Sales,Web Self Srvc - Home LTE,490931000,5221,3663,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Bundling - Orbit Bundling,Mobile Apps - Home LTE,50000,5,5,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Bundling - Orbit Bundling,Web Self Srvc - Home LTE,20000,2,2,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home CVM - Orbit CVM Lapser Prevention,GraPARI - DSC,100000,1,1,100000,1,1\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home CVM - Orbit CVM Lapser Prevention,Mobile Apps - DigiPos,787000,7,7,787000,7,7\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home CVM - Orbit CVM Lapser Prevention,Mobile Apps - Home LTE,5335000,43,42,5335000,43,42\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home CVM - Orbit CVM Lapser Prevention,Mobile Apps - MyTelkomsel App,26160000,195,174,26160000,195,174\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home CVM - Orbit CVM Lapser Prevention,Web Self Srvc - Home LTE,31210000,255,238,31210000,255,238\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home CVM - Orbit CVM Low Denom,Mobile Apps - Home LTE,558000,50,36,558000,50,36\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home CVM - Orbit CVM Low Denom,Web Self Srvc - Home LTE,45000,7,5,45000,7,5\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home CVM - Orbit CVM Stimulation,Mobile Apps - DigiPos,525000,4,4,525000,4,4\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home CVM - Orbit CVM Stimulation,Mobile Apps - Home LTE,35745000,239,219,35745000,239,219\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home CVM - Orbit CVM Stimulation,Mobile Apps - MyTelkomsel App,1625000,13,13,1625000,13,13\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home CVM - Orbit CVM Stimulation,Web Self Srvc - Home LTE,456065000,3200,2908,456065000,3200,2908\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home CVM - Orbit CVM Uplift,Ext Modern - KISEL,1530000,10,9,1530000,10,9\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home CVM - Orbit CVM Uplift,Ext Modern - PMB,75000,1,1,75000,1,1\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home CVM - Orbit CVM Uplift,GraPARI - DSC,95000,1,1,95000,1,1\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home CVM - Orbit CVM Uplift,Mobile Apps - DigiPos,3415500,28,26,3415500,28,26\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home CVM - Orbit CVM Uplift,Mobile Apps - Home LTE,48245000,343,321,48245000,343,321\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home CVM - Orbit CVM Uplift,Mobile Apps - MyTelkomsel App,27655000,223,208,27655000,223,208\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home CVM - Orbit CVM Uplift,Web Portal - my.telkomsel.com,70000,1,1,70000,1,1\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home CVM - Orbit CVM Uplift,Web Self Srvc - Home LTE,7745000,56,54,7745000,56,54\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home CVM - Orbit CVM Winback,Ext Modern - KISEL,230000,4,4,230000,4,4\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home CVM - Orbit CVM Winback,Ext Modern - PMB,65000,1,1,65000,1,1\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home CVM - Orbit CVM Winback,GraPARI - DSC,100000,4,4,100000,4,4\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home CVM - Orbit CVM Winback,Mobile Apps - DigiPos,80000,1,1,80000,1,1\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home CVM - Orbit CVM Winback,Mobile Apps - Home LTE,25430000,395,314,25430000,395,314\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home CVM - Orbit CVM Winback,Mobile Apps - MyTelkomsel App,9740000,187,131,9740000,187,131\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home CVM - Orbit CVM Winback,Web Portal - my.telkomsel.com,205000,3,2,205000,3,2\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home CVM - Orbit CVM Winback,Web Self Srvc - Home LTE,102735000,1927,1280,102735000,1927,1280\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home CVM - Orbit Low Denom,Mobile Apps - Home LTE,279000,25,18,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home CVM - Orbit Low Denom,Mobile Apps - MyTelkomsel App,20000,1,1,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home CVM - Orbit Low Denom,Web Self Srvc - Home LTE,3965000,374,190,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home CVM - Orbit Special Offer Home Mobility,Mobile Apps - Home LTE,957000,12,12,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home CVM - Orbit Special Offer Home Mobility,Web Self Srvc - Home LTE,24462000,302,242,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home CVM - Orbit Winback,Web Self Srvc - Home LTE,13561000,141,113,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Core - Home Orbit 5G,Mobile Apps - Home LTE,5576000,34,26,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Core - Home Orbit 5G,Mobile Apps - MyTelkomsel App,131000,1,1,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Core - Home Orbit 5G,Web Self Srvc - Home LTE,24314000,114,80,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Core - Orbit 5G Regular,Mobile Apps - Home LTE,898000,4,4,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Core - Orbit 5G Regular,Mobile Apps - MyTelkomsel App,3106000,18,15,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Core - Orbit 5G Regular,Web Self Srvc - Home LTE,1422000,8,6,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Core - Orbit B2B Regular,Surrounding - B2B Platform,8687000,52,4,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Core - Orbit Postpaid Regular,GraPARI - DSC,405000,5,5,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Core - Orbit Postpaid Regular,Mobile Apps - Home LTE,1978000,17,12,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Core - Orbit Postpaid Regular,Web Self Srvc - Home LTE,369000,4,3,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Core - Orbit Regular,Ext Modern - FINARYA LinkAja,162000,2,2,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Core - Orbit Regular,Ext Modern - FINNET,131000,1,1,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Core - Orbit Regular,Ext Modern - KISEL,9520000,56,48,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Core - Orbit Regular,Ext Modern - NARINDO,293000,3,3,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Core - Orbit Regular,Ext Modern - PMB,1033000,7,7,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Core - Orbit Regular,Ext Modern - PT.BAD,176000,1,1,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Core - Orbit Regular,Ext Modern - RISE,131000,1,1,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Core - Orbit Regular,GraPARI - DSC,3181000,29,28,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Core - Orbit Regular,Mobile Apps - DigiPos,42718500,359,271,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Core - Orbit Regular,Mobile Apps - Home LTE,648012000,4996,3819,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Core - Orbit Regular,Mobile Apps - MyTelkomsel App,331172000,2472,1719,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Core - Orbit Regular,UMB - USSD (ADN: 363),21859000,150,93,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Core - Orbit Regular,UMB - USSD (ADN: 888),162000,2,1,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Core - Orbit Regular,Virtual Assistant - Line,614000,3,2,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Core - Orbit Regular,Web Portal - my.telkomsel.com,536000,6,5,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Core - Orbit Regular,Web Portal - telkomsel.com,81000,1,1,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Core - Orbit Regular,Web Self Srvc - Home LTE,3179805000,24531,17241,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home OTT,,599500,7,7,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home OTT,Mobile Apps - Home LTE,885000,23,21,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home OTT,Web Self Srvc - Home LTE,9172500,197,174,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home OTT - Home Orbit Zoom,Mobile Apps - Home LTE,190000,7,4,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home OTT - Home Orbit Zoom,Web Self Srvc - Home LTE,1220000,23,18,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Seasonal - Orbit Internet Malam,Mobile Apps - Home LTE,1505000,87,68,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Seasonal - Orbit Internet Malam,Web Self Srvc - Home LTE,7331000,464,369,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Seasonal - Orbit Surprise Deals,Ext Modern - FINNET,212000,2,2,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Seasonal - Orbit Surprise Deals,Mobile Apps - DigiPos,176000,1,1,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Seasonal - Orbit Surprise Deals,Mobile Apps - Home LTE,4369000,28,28,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Seasonal - Orbit Surprise Deals,Mobile Apps - MyTelkomsel App,3015000,21,21,0,0,0\r\n
+10/31/2023,Oct-23,CENTRAL JABOTABEK,Home Seasonal - Orbit Surprise Deals,Web Portal - my.telkomsel.com,176000,1,1,0,0,0`,
   samples: [
     {
       context: `Orbit Sample Context Description`,
@@ -217,21 +350,21 @@ const orbitSample = {
             }`,
           },
           {
-            title: "Revenue by Month",
+            title: "Revenue by Region",
             chartType: "lineChart",
             javascriptFunction: `data => {
               const groupedData = data.reduce((result, row) => {
-                const month = row["month"];
+                const regionSales = row["region_sales"];
                 const revenue = parseNumber(row["rev"]);
-                if (month && !isNaN(revenue)) {
-                  if (!result[month]) {
-                    result[month] = 0;
+                if (regionSales && !isNaN(revenue)) {
+                  if (!result[regionSales]) {
+                    result[regionSales] = 0;
                   }
-                  result[month] += revenue;
+                  result[regionSales] += revenue;
                 }
                 return result;
               }, {});
-              return Object.entries(groupedData).map(([month, revenue]) => ({ x: month, y: revenue }));
+              return Object.entries(groupedData).map(([regionSales, revenue]) => ({ x: regionSales, y: revenue }));
             }`,
           },
           {
@@ -254,8 +387,8 @@ const orbitSample = {
             }`,
           },
           {
-            title: "Revenue by Package Service (Treemap Chart)",
-            chartType: "treemapChart",
+            title: "Revenue by Package Service",
+            chartType: "lineChart",
             javascriptFunction: `data => {
               const groupedData = data.reduce((result, row) => {
                 const packageService = row["package_service"];
