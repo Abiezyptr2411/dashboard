@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { stringify } from "querystring";
 import React from "react";
-import ChatBot from 'react-simple-chatbot';
+import { BubbleChat } from 'flowise-embed-react';
 import {
   Button,
   ButtonsRow,
@@ -321,7 +321,11 @@ export default function Home() {
               }}
               >
               {showChatbot && (
-                <ChatBot steps={steps} />
+                <BubbleChat
+        chatflowid="182a577c-5697-4272-a31e-c349714b967d"
+        apiHost="http://localhost:3000"
+        apiToken="your-api-token" // Make sure to replace with your actual API token
+      />
               )}
             </div>
 
